@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Html Email Generator</title>
+	<style>
+*{
+padding: 0;
+margin: 0;
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+
+}
+body{
+background-color: #000;
+}
+.text-center{
+text-align:center;
+padding: 10px;
+background-image: linear-gradient(to right, #c20 , #00c);
+color: #ccc;
+text-shadow:linear-gradient(0% #cc0 ,77% #00c) 1px 1px 4px ;
+}
+button{
+display:block;
+margin: auto;
+border-radius:10px;
+font-size: 2rem;
+text-align:center;
+padding: 10px;
+background-image: linear-gradient(to right, #c20 , #00c);
+color: #ccc;
+text-shadow:linear-gradient(#cc0 ,#00c) 1px 1px 4px ;
+transition:all .3s ease-in-out;
+}
+button:hover{
+background-image: none;
+color:#c20;
+cursor:pointer;
+scale:1.017;
+border:7px double #c00;
+}
+
+.menu{
+position:absolute;
+top:10px;
+right:20px;
+border:4px solid #ccc;
+padding: 0 3px;
+border-radius: 5px;
+display: none;
+}
+.hamburger{
+background-color: #fff;
+width: 28px;
+height: 5px;
+margin: 5px 0;
+transition:all .7s ease-in-out;
+}
+.menu:hover{
+cursor:pointer;
+}
+.list{
+	width: 100%;
+	height: 50vh;
+	color: #000;
+	display:flex;
+	flex-direction:column;
+	margin-top: 70px;
+	justify-content:center;
+	align-items:center;
+	transition:all .4s ease-in-out;
+	position:absolute;
+	top:100px;
+	right:-100%;
+}
+
+.list a{
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	background-color: #2e2323;
+	text-decoration: none;
+	border:2px solid #2e2323;
+	transition:all .4s ease-in-out;
+	text-transform: uppercase;
+	color: #fff;
+}
+.list a:hover{
+	background-color: transparent;
+	color: #f70;
+	letter-spacing: 4px;
+	margin: 5px;
+	border-radius:10px;
+	
+}
+
+/* media query */
+
+
+@media (max-width:768px){
+	.menu{
+		display: block;
+	}
+#chk:checked + .menu .hamburger:first-child{
+transform: translateY(10px)
+rotate(45deg);
+}
+#chk:checked + .menu .hamburger:last-child{
+transform: translateY(-10px)
+rotate(-45deg);
+}
+#chk:checked + .menu .hamburger:nth-child(2){
+background-color: rgba(0,0,255,1);
+}
+#chk:checked + .menu + .list{
+width: 100%;
+right:0;
+
+}
+}
+	</style>
+</head>
+<body>
+<input type="checkbox" name="" id="chk" hidden>
+<div class="menu" id="menu">
+	<div class="hamburger"></div>
+	<div class="hamburger"></div>
+	<div class="hamburger"></div>
+
+</div>
+<div class="list">
+<a href="#">item1</a>
+<a href="#">item2</a>
+<a href="#">item3</a>
+<a href="#">item4</a>
+<a href="#">item5</a>
+</div>
+
+<h1 class="text-center" >Html Email Generator</h1>
+
+<br>
+<br>
+<button id="btn">Generate Email</button>
+	<script>
+	const menu = document.querySelector('#menu');
+	const chk = document.querySelector('#chk');
+	menu . onclick = ()=>{
+	if(chk.checked){
+	chk.checked=false;
+	}else{
+	chk.checked=true;
+	}
+	}
+	
+	</script>
+</body>
+</html>
